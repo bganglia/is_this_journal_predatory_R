@@ -23,12 +23,19 @@ matches <- function(predatory_info, text_descriptor) {
     matches_domain(predatory_info$domain, text_descriptor) | matches_name(predatory_info$name, text_descriptor)
 }
 
-format_predatory_string <- function(predatory_info) {
-
+format_predatory_string <- function (predatory_info) {
+    sprintf(
+        "The journal %s at %s is listed as a predatory journal in Beall's List",
+        predatory_info$name[1],
+        predatory_info$name[2]
+    )
 }
 
 format_not_predatory <- function(text_descriptor) {
-
+    sprintf(
+        "%s is not listed as a predatory journal. To judge for yourself, read more at https://thinkchecksubmit.org/",
+         text_descriptor
+    )
 }
 
 is_predatory <- function(text_descriptor) {
