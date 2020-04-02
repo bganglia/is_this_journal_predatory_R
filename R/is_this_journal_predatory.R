@@ -46,6 +46,13 @@ json_path <- "predatory_journals.json"
 
 predatory_info_sets <- fromJSON(file=json_path)[[1]]
 
+#' Check whether a journal is predatory.
+#' 
+#' @param text_descriptor A name or URL to search.
+#' @return A text description stating whether the journal is known to be predatory.
+#' @examples
+#' is_predatory("Academic Journals")
+#' is_predatory("http://academiapublishing.org/index.htm")
 is_predatory <- function(text_descriptor) {
     text_response = ""
     for (predatory_info in predatory_info_sets) {
