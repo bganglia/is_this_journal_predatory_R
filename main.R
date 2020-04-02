@@ -20,7 +20,7 @@ matches_name <- function(predatory_name, text_descriptor) {
 }
 
 matches <- function(predatory_info, text_descriptor) {
-
+    matches_domain(predatory_info$domain, text_descriptor) | matches_name(predatory_info$name, text_descriptor)
 }
 
 format_predatory_string <- function(predatory_info) {
