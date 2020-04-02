@@ -38,6 +38,10 @@ format_not_predatory <- function(text_descriptor) {
     )
 }
 
+json_path <- "predatory_journals.json"
+
+predatory_info_sets <- fromJSON(file=json_path)
+
 is_predatory <- function(text_descriptor) {
     text_response = ""
     for (predatory_info in predatory_info_sets) {
