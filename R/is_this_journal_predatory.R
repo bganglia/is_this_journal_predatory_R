@@ -1,4 +1,4 @@
-#' is_this_journal_predatory: A package for checking whether a journal is legitimate or predatory
+#' is.this.journal.predatory: A package for checking whether a journal is legitimate or predatory
 #'
 #' The is_predatory function, which accepts either the name or URL of a journal, will output 
 #' a sentence stating whether the journal is listed in Beall's List of predatory journals
@@ -7,10 +7,6 @@
 #' @docType package
 #' @name is_this_journal_predatory
 NULL
-
-library(rjson)
-
-setwd("~/Documents/proj/open_source/original/is_this_journal_predatory/is_this_journal_predatory_R")
 
 get_domain <- function(url) {
     url <- gsub("http://", "", url)
@@ -54,7 +50,7 @@ format_not_predatory <- function(text_descriptor) {
 
 json_path <- "predatory_journals.json"
 
-predatory_info_sets <- fromJSON(file=json_path)[[1]]
+predatory_info_sets <- rjson::fromJSON(file=json_path)[[1]]
 
 #' Check whether a journal is predatory.
 #' 
@@ -63,6 +59,7 @@ predatory_info_sets <- fromJSON(file=json_path)[[1]]
 #' @examples
 #' is_predatory("Academic Journals")
 #' is_predatory("http://academiapublishing.org/index.htm")
+#' @export
 is_predatory <- function(text_descriptor) {
     text_response = ""
     for (predatory_info in predatory_info_sets) {

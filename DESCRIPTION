@@ -1,0 +1,14 @@
+Package: is.this.journal.predatory
+Title: Check Whether a Journal is Predatory From Within R
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "B",
+           family = "Ganglia",
+           role = c("aut", "cre"),
+           email = "bganglia892@gmail.com")
+Description: This function checks whether the provided URL or journal name is listed in Beall's list.
+Imports:
+    rjson
+License: MIT
+Encoding: UTF-8
+LazyData: true
