@@ -20,9 +20,6 @@ matches_domain <- function(predatory_name, text_descriptor)  {
 }
 
 matches_name <- function(predatory_name, text_descriptor) {
-    #print(tolower(predatory_name))
-    #print(tolower(text_descriptor))
-    #print(any(tolower(predatory_name) == tolower(text_descriptor)))
     any(tolower(predatory_name) == tolower(text_descriptor))
 }
 
