@@ -1,0 +1,29 @@
+---
+title: "check-journal"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{check-journal}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(is.this.journal.predatory)
+```
+
+Check whether Academic Journals is predatory
+
+```{r}
+
+is_predatory("Academic Journals")
+
+```
+
+
